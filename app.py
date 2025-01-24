@@ -19,7 +19,7 @@ def handle_vote(candidate: str, color: str="white"):
         st.html(f'<h1 style="color: {color}">{candidate}</h1>')
         submit_button = st.form_submit_button("Submit")
         if submit_button:
-            if not voteid or len(str(voteid)) < 10:
+            if not voteid or 14 > len(str(voteid)) < 10:
                 st.warning("Invaild Phone Number")
                 st.stop()
             else:
