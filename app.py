@@ -74,7 +74,8 @@ else:
     with image_left:
         st.image(f"assets/voting-site-{candidate_name.lower()}-avatar.png")
     with caption_right:
-        st.write(f"Support *{candidate_name}* ✊{rd_choice(['🤩', '😌'])},\nCopy the caption below and share with loved ones")
+        st.subheader(f"Support **{candidate_name}** ✊{rd_choice(['🤩', '😌'])}")
+        st.write("Copy the caption below and share with loved ones")
         st.code(f"""
 🌟 Vote {candidate_name} for President!!!
 🔗 https://bit.ly/ds25-vote
