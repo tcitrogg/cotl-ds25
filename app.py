@@ -46,7 +46,7 @@ def handle_vote(candidate: str, color: str="white"):
                     
                     # Updated Sheets with updated data
                     SheetConn.update(worksheet="ResultPage", data=UPDATED_DATA)
-                    st.success(f"Voted for {candidate}")
+                    st.toast(f"You Voted {candidate}!!", icon="🎊")
                     st.rerun()
 
 if "cotldsvote" not in st.session_state:
@@ -66,6 +66,7 @@ if "cotldsvote" not in st.session_state:
             if st.button("Vote Okoli"):
                 handle_vote("Okoli", color="#d09715")
 else:
+    st.balloons()
     candidate_name = st.session_state.cotldsvote["candidate"]
     st.title(f"🎊 You voted {st.session_state.cotldsvote['candidate']}")
     image_left, caption_right = st.columns(2)
