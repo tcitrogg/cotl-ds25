@@ -1,6 +1,6 @@
 # cotl-ds25
 
-wagwan
-
-A voting page for Drama Sunday'25 Campaign
+Drama Sunday'25 Campaign Voting Poll
 @ Chapel Of The Light, Unilorin
+
+<!-- wagwan -->
