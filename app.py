@@ -1,16 +1,53 @@
 import streamlit as st
+from streamlit_gsheets import GSheetsConnection
+import pandas as pd
+from datetime import datetime
 
+# 
 st.set_page_config(page_title="Vote | Drama Sunday 25", page_icon="assets/favicon.png")
+
+SheetConn = st.connection("gsheets", type=GSheetsConnection)
+EXISTINGDATA = SheetConn.read(worksheet="ResultPage", ttl=5)
+
 
 st.image("assets/voting-site-banner.png")
 
 @st.dialog("You are voting for")
 def handle_vote(candidate: str, color: str="white"):
-    st.html(f'<h1 style="color: {color}">{candidate}</h1>')
-    if st.button("Submit"):
-        st.success(f"Voted for {candidate}")
-        st.session_state.cotldsvote = {"candidate": candidate}
-        st.rerun()
+    with st.form(key="voting_form"):
+        voteid = st.text_input("Phone number*").title()
+        st.html(f'<h1 style="color: {color}">{candidate}</h1>')
+        submit_button = st.form_submit_button("Submit")
+        if submit_button:
+            if not voteid or len(str(voteid)) < 10:
+                st.warning("Invaild Phone Number")
+                st.stop()
+            else:
+                with st.spinner():
+                    if candidate == "Nkuku":
+                        nkukuScore, okoliScore = (1, 0)
+                    else:
+                        okoliScore, nkukuScore = (1, 0)
+                    timestamp = datetime.now().timestamp()
+                    
+                    # New Data
+                    NEWVOTEDATA = pd.DataFrame([
+                        {
+                            "Nkuku": nkukuScore,
+                            "Okoli": okoliScore,
+                            "VoteID": voteid,
+                            "Timestamp": timestamp
+                        }
+                    ])
+                    st.session_state.cotldsvote = {"candidate": candidate, "voteid": voteid, "timestamp":timestamp}
+                    
+                    # Updated Data
+                    UPDATED_DATA = pd.concat([EXISTINGDATA, NEWVOTEDATA])
+                    
+                    # Updated Sheets with updated data
+                    SheetConn.update(worksheet="ResultPage", data=UPDATED_DATA)
+                    st.success(f"Voted for {candidate}")
+                    st.rerun()
 
 if "cotldsvote" not in st.session_state:
         
