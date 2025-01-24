@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 from datetime import datetime
+from random import choice as rd_choice
 
 # 
 st.set_page_config(page_title="Vote | Drama Sunday 25", page_icon="assets/favicon.png")
@@ -17,9 +18,9 @@ def handle_vote(candidate: str, color: str="white"):
     with st.form(key="voting_form"):
         voteid = st.text_input("Phone number*").title()
         st.html(f'<h1 style="color: {color}">{candidate}</h1>')
-        submit_button = st.form_submit_button("Submit")
+        submit_button = st.form_submit_button("Confirm Vote")
         if submit_button:
-            if not voteid or 14 > len(str(voteid)) < 10:
+            if not voteid or 15 > len(str(voteid)) < 10:
                 st.warning("Invaild Phone Number")
                 st.stop()
             else:
@@ -73,13 +74,13 @@ else:
     with image_left:
         st.image(f"assets/voting-site-{candidate_name.lower()}-avatar.png")
     with caption_right:
-        st.write("Support your candidate,\nCopy the caption below and share with loved ones")
+        st.write(f"Support *{candidate_name}* ✊{rd_choice(['🤩', '😌'])},\nCopy the caption below and share with loved ones")
         st.code(f"""
 🌟 Vote {candidate_name} for President!!!
 🔗 https://bit.ly/ds25-vote
 
 #vote #{candidate_name.lower()}4president #cotl #ds25""", language="markdown")
-        st.download_button(label="Download",
+        st.download_button(label="Download Campaign Flyer",
                            data=open(f"assets/exodus-cand-{candidate_name.lower()}-CAMP.png", mode="rb"),
                            file_name=f"vote_{candidate_name}_for_president.png",
                            mime="image/png"
