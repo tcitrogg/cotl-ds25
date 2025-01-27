@@ -11,7 +11,7 @@ SheetConn = st.connection("gsheets", type=GSheetsConnection)
 stats_data = SheetConn.read(worksheet="ResultPage", usecols=[0, 1], ttl=5)
 
 
-st.page_link("app.py", label="Vote", icon="✅")
+# st.page_link("app.py", label="Vote", icon="✅")
 
 
 def get_vote_counts():
