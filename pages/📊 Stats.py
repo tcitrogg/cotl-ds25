@@ -10,6 +10,10 @@ st.set_page_config(page_title="Stats | Drama Sunday 25", page_icon="assets/favic
 SheetConn = st.connection("gsheets", type=GSheetsConnection)
 stats_data = SheetConn.read(worksheet="ResultPage", usecols=[0, 1], ttl=5)
 
+
+st.page_link("app.py", label="Vote", icon="✅")
+
+
 def get_vote_counts():
     nkuku_count = stats_data["Nkuku"].replace(0.0, np.nan).dropna().count()
     okoli_count = stats_data["Okoli"].replace(0.0, np.nan).dropna().count()

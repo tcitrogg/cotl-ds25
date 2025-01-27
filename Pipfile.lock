@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "74e182126a34e6e4ac61c70c93266587769b297bee4aaec7bae61e66f95bea49"
+            "sha256": "95350ee29f2e0ff5bf756e9d0c0e25121840ae961994414dd9c5e9df4a6fe614"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1183,15 +1183,6 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==0.1.0"
-        },
-        "st-pages": {
-            "hashes": [
-                "sha256:2641cfbff1c768ff146858ed742d282b30a3a4c3e4f7717898705bbaee717736",
-                "sha256:9098fb4d96bc1dfa56cc2c56ef6fe44e607c69261ff4bceee1f6e9c1e0c2acb4"
-            ],
-            "index": "pypi",
-            "markers": "python_version not in '2.7, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8' and python_version >= '3.9'",
-            "version": "==1.0.1"
         },
         "streamlit": {
             "hashes": [

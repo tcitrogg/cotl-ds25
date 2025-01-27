@@ -8,7 +8,6 @@ streamlit = "*"
 st-gsheets-connection = "*"
 plotly = "*"
 matplotlib = "*"
-st-pages = "*"
 
 [dev-packages]
 
