@@ -7,15 +7,16 @@ from random import choice as rd_choice
 # 
 st.set_page_config(page_title="Vote | Drama Sunday 25", page_icon="assets/favicon.png")
 
+    
+#
+# aside = st.sidebar
+# pg = st.navigation([st.Page(page="streamlit_app.py", title="Home", icon="✅")], position="sidebar", expanded=False)
+# pg.run()
+
+
+# 
 SheetConn = st.connection("gsheets", type=GSheetsConnection)
 EXISTINGDATA = SheetConn.read(worksheet="ResultPage", ttl=5)
-
-# Aside bar
-# aside = st.sidebar
-
-# aside.page_link("Vote.py", label="Vote")
-# st.page_link("pages/Stats.py", label="Stats")
-
 
 st.image("assets/voting-site-banner.png")
 
