@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 streamlit = "*"
 st-gsheets-connection = "*"
+plotly = "*"
+matplotlib = "*"
 
 [dev-packages]
 

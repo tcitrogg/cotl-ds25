@@ -16,7 +16,7 @@ st.image("assets/voting-site-banner.png")
 @st.dialog("You are voting for")
 def handle_vote(candidate: str, color: str="white"):
     with st.form(key="voting_form"):
-        voteid = st.text_input("Phone number*").title()
+        voteid = st.text_input("Phone number*")
         st.html(f'<h1 style="color: {color}">{candidate}</h1>')
         submit_button = st.form_submit_button("Confirm Vote")
         if submit_button:
@@ -24,6 +24,11 @@ def handle_vote(candidate: str, color: str="white"):
                 st.warning("Invaild Phone Number")
                 st.stop()
             else:
+                try:
+                    voteid = int(voteid)
+                except ValueError:
+                    st.warning("Invaild Phone Number")
+                    st.stop()
                 with st.spinner():
                     if candidate == "Nkuku":
                         nkukuScore, okoliScore = (1, 0)
@@ -86,8 +91,9 @@ else:
                            file_name=f"vote_{candidate_name}_for_president.png",
                            mime="image/png"
                            )
-    
+
 st.divider()
 _, middle, _ = st.columns([0.3, 0.4, 0.15])
 with middle:
+    st.link_button(label="", url="https://zaap.bio/Chapelunilorin")
     st.image("assets/social_mark.png", width=200)
