@@ -7,7 +7,7 @@ pages = {
         st.Page("route/support.py", title="Support your Candidate"),
     ],
     "Resources": [
-        st.Page("route/learn.py", title="Drama Sunday"),
+        st.Page("route/share.py", title="Drama Sunday"),
         # st.Page("trial.py", title="Try it out"),
     ],
 }

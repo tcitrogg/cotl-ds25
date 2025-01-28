@@ -101,5 +101,5 @@ else:
 st.divider()
 _, middle, _ = st.columns([0.3, 0.4, 0.15])
 with middle:
-    st.link_button(label="", url="https://zaap.bio/Chapelunilorin")
+    st.link_button(label="@chapelunilorin", url="https://zaap.bio/Chapelunilorin")
     st.image("assets/social_mark.png", width=200)

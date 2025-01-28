@@ -70,9 +70,7 @@ st.header(f"{invaildvotes_count} votes were flagged invaild!", anchor="InvaildVo
 zinec_warning = """
 **ZINEC Flags Invalid Votes to Ensure Fair Elections**  
 
-The Z Islands National Electoral Committee (ZINEC) has identified and flagged certain inappropriate votes as **invalid**. In a statement, ZINEC emphasized the importance of citizens supporting their preferred candidates with honesty to maintain the integrity of the electoral process.  
-
-The committee assured the public of its commitment to fairness, adding that any attempt to manipulate results through inappropriate VoteIDs _voters phone numbers_ will be flagged and addressed.  
+The **Z Islands National Electoral Committee** _(ZINEC)_ has identified and flagged certain inappropriate and suspicious votes as :red[**Invalid**]. Understanding the importance of citizens supporting their preferred candidates with honesty to maintain the integrity of the electoral process, the committee assured the public of its commitment to fairness, adding that any attempt to manipulate results through inappropriate VoteIDs _voters phone numbers_ will be flagged and addressed.  
 
 ZINEC encourages all citizens to uphold the principles of fair participation as the election process continues.  
 
@@ -87,3 +85,10 @@ st.write(zinec_warning)
          
 # Signed
 # ZINEC Commitee
+
+
+st.divider()
+_, middle, _ = st.columns([0.3, 0.4, 0.15])
+with middle:
+    st.link_button(label="@chapelunilorin", url="https://zaap.bio/Chapelunilorin")
+    st.image("assets/social_mark.png", width=200)
