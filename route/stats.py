@@ -4,7 +4,7 @@ import plotly.express as px
 import numpy as np
 from streamlit_gsheets import GSheetsConnection
 
-st.set_page_config(page_title="Stats | Drama Sunday 25", page_icon="assets/favicon.png")
+st.set_page_config(page_title="Stats | Drama Sunday'25", page_icon="assets/favicon.png")
 
 
 SheetConn = st.connection("gsheets", type=GSheetsConnection)

@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Learn | Drama Sunday 25", page_icon="assets/favicon.png")
+st.set_page_config(page_title="Share | Drama Sunday'25", page_icon="assets/favicon.png")
 
 st.video("https://youtu.be/rXM6IxCHZX8")
 

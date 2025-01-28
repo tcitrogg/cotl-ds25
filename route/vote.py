@@ -5,7 +5,7 @@ from datetime import datetime
 from random import choice as rd_choice
 
 # 
-st.set_page_config(page_title="Vote | Drama Sunday 25", page_icon="assets/favicon.png")
+st.set_page_config(page_title="Vote | Drama Sunday'25", page_icon="assets/favicon.png")
 
 #
 # aside = st.sidebar

@@ -2,7 +2,7 @@ import streamlit as st
 from random import choice as rd_choice
 
 
-st.set_page_config(page_title="Support | Drama Sunday 25", page_icon="assets/favicon.png")
+st.set_page_config(page_title="Support | Drama Sunday'25", page_icon="assets/favicon.png")
 
 def mk_support_page(candidate_name: str):
     image_left, caption_right = st.columns(2)
